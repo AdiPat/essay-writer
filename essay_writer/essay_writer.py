@@ -1,11 +1,10 @@
 import traceback
 import sys
+import os
 from dotenv import load_dotenv
 from openai import OpenAI
 from .printer import Printer as printer
 from .utils import get_max_output_tokens
-
-load_dotenv(override=True, dotenv_path=".env")
 
 
 class EssayWriter:
@@ -29,6 +28,7 @@ class EssayWriter:
         Returns:
             None
         """
+        load_dotenv(override=True, dotenv_path=".env")
         self.keys = keys or {}
 
         if not self.validate_openai_key():
@@ -39,6 +39,9 @@ class EssayWriter:
 
     def validate_openai_key(self) -> bool:
         openai_api_key = self.keys.get("OPENAI_API_KEY")
+
+        if not openai_api_key:
+            openai_api_key = os.getenv("OPENAI_API_KEY")
 
         if openai_api_key is None:
             printer.print_red_message("OpenAI API key is not set. ❌")

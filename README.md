@@ -13,7 +13,7 @@ pip install essay-writer
 ### CLI Usage
 
 ```bash
-python -m essay-writer --topic "The Solar System"
+python -m essay_writer --topic "The Solar System"
 ```
 
 On the first run, the CLI will prompt you to enter your `OPENAI_API_KEY` which will get stored for future use.
@@ -21,13 +21,13 @@ On the first run, the CLI will prompt you to enter your `OPENAI_API_KEY` which w
 Alternatively, you can reset your API key using the following command.
 
 ```bash
-python -m essay-writer --set-key "your-openai-api-key"
+python -m essay_writer --set-key "your-openai-api-key"
 ```
 
 You could also request a re-prompt by using the `-r` flag.
 
 ```bash
-python -m essay-writer -r --topic "The Solar System"
+python -m essay_writer -r --topic "The Solar System"
 ```
 
 ### Package Usage

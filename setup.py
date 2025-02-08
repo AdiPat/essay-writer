@@ -12,6 +12,7 @@ setup(
         "pydantic_core==2.27.2",
         "rich==13.9.4",
         "openai==1.61.1",
+        "setuptools==75.8.0",
     ],
     author="Aditya Patange (AdiPat)",
     author_email="contact.adityapatange@gmail.com",
